@@ -1,24 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: sans-serif;
-}
-
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-.container {
-  max-width: 90%;
-  width: 1270px;
-  padding: 0 15px;
-  margin: 0 auto;
-}
+@import "vars";
+@import "global";
+@import "header";
+@import "footer";

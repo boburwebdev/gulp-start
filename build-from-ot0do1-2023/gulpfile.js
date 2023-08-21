@@ -25,8 +25,8 @@ function pages() {
 
 function styles() {
   return src([
-    "node_modules/swiper/swiper.css",
-    "app/scss/**/*.scss"
+    "node_modules/swiper/swiper-bundle.min.css",
+    "app/scss/style.scss"
   ])
     .pipe(concat("style.min.css"))
     .pipe(autoprefixer({
@@ -102,7 +102,7 @@ function watching() {
 }
 
 function cleanDist() {
-  return src("./dist/", { read: false })
+  return src("./dist/", { read: false, allowEmpty: true })
     .pipe(clean());
 }
 
@@ -116,7 +116,7 @@ function buildDist() {
     "!app/images/*.svg",
     "app/images/sprite.svg",
     "app/fonts/dist/*.*"
-  ], { base: "app" })
+  ], { base: "app", allowEmpty: true })
     .pipe(dest("./dist/"));
 }
 
